@@ -35,10 +35,7 @@
 
           <!-- about div start here -->
 
-          <div
-            id="about"
-            class="about-section border border-red-800 w-5/6 my-3"
-          >
+          <div id="form-about" class="about-section w-5/6 my-3">
             <!-- about heading -->
             <h2
               id="about-section"
@@ -81,12 +78,12 @@
             <!-- image file -->
             <label for="Image">Select Image:</label><br />
 
-            <input type="file" src="" alt="" class="my-2" />
+            <input type="file" src="" alt="" class="my-2" id="img" />
           </div>
 
           <!-- contact section div -->
 
-          <div id="contact" class="contact w-5/6 my-2">
+          <div id="form-contact" class="contact w-5/6 my-2">
             <!-- contact heading -->
             <h2
               id="about-section"
@@ -100,7 +97,7 @@
             <input
               type="text"
               name="phone"
-              id="phone"
+              id="form-phone"
               maxlength="10"
               class="my-2 px-5 w-full"
               placeholder="Contact Number"
@@ -110,8 +107,8 @@
             <label for="email">Email:</label><br />
             <input
               type="email"
-              name="role"
-              id="role"
+              name="form-email"
+              id="form-email"
               class="my-2 px-5 w-full"
               placeholder="Your Email"
             />
@@ -119,8 +116,8 @@
             <label for="Address">Address:</label><br />
             <input
               type="text"
-              name="role"
-              id="role"
+              name="form-address"
+              id="form-address"
               class="my-2 px-5 w-full"
               placeholder="Place you live in"
             />
@@ -184,14 +181,172 @@
             <!-- experience div end -->
           </div>
 
-          <!-- contact section div end -->
+          <!-- professional experience div end -->
+
+          <!-- education div start-->
+
+          <div id="experience" class="experience w-5/6 my-3">
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              Education
+            </h2>
+
+            <label for="Institute">Institute:</label><br />
+            <input
+              type="text"
+              name="Institute"
+              id="Institute"
+              class="my-2 px-5 w-full"
+              placeholder="Institute"
+            />
+
+            <label for="course">Course:</label><br />
+            <input
+              type="text"
+              name="course"
+              id="course"
+              class="my-2 px-5 w-full"
+              placeholder="course"
+            />
+
+            <label for="location">location:</label><br />
+            <input
+              type="text"
+              name="location"
+              id="Institute-location"
+              class="my-2 px-5 w-full"
+              placeholder="location"
+            />
+
+            <label for="from">From:</label><br />
+            <input
+              type="date"
+              name="course-from"
+              id="course-from"
+              class="my-2 px-5 w-full"
+              placeholder="started from"
+            />
+
+            <label for="from">To:</label><br />
+            <input
+              type="date"
+              name="course-to"
+              id="course-to"
+              class="my-2 px-5 w-full"
+              placeholder="done till"
+            />
+          </div>
+          <!-- course div end -->
+
+          <!-- skills div -->
+
+          <div id="skills" class="project w-5/6 my-3">
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              Skills
+            </h2>
+
+            <label for="skills">Skills:</label><br />
+            <input
+              type="text"
+              name="Skills"
+              id="form-skills"
+              class="my-2 px-5 w-full"
+              placeholder="Add your Skills"
+            />
+          </div>
+
+          <!-- skills div end -->
+
+          <!-- project div start -->
+
+          <div id="project" class="project w-5/6 my-3">
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              Projects
+            </h2>
+
+            <p class="my-2 text-red-600">
+              <b>NOTE:</b> Adding 2 Projects is mandatory, It will help your
+              resume to shirtlist.
+            </p>
+
+            <div id="project1">
+              <label for="Projects">Project 1:</label><br />
+              <input
+                type="text"
+                name="Project-name"
+                id="form-Project-name1"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project name here"
+              />
+
+              <label for="Projects-link1">Project 1 github Link:</label><br />
+              <input
+                type="text"
+                name="Project-link1"
+                id="Project-link1"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project link here"
+              />
+
+              <label for="Projects-link">Project 1 Description:</label><br />
+              <input
+                type="text"
+                name="Project-Description1"
+                id="Project-Description1"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project Description here"
+              />
+              <hr />
+              <br />
+            </div>
+            <!-- project 2 -->
+
+            <div id="project2">
+              <label for="Project 2">Project 2:</label><br />
+              <input
+                type="text"
+                name="Project-name2"
+                id="form-Project-name2"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project name here"
+              />
+
+              <label for="Projects-link1">Project 2 github Link:</label><br />
+              <input
+                type="text"
+                name="Project-link2"
+                id="Project-link2"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project link here"
+              />
+
+              <label for="Projects-link">Project 2 Description:</label><br />
+              <input
+                type="text"
+                name="Project-Description2"
+                id="Project-Description2"
+                class="my-2 px-5 w-full"
+                placeholder="Enter Project Description here"
+              />
+              <hr />
+            </div>
+          </div>
+          <!-- project description div end -->
 
           <!-- left div input end -->
         </div>
 
         <!-- box which have whole page  -->
 
-        <div id="box" class="box max-w-[60%] h-auto bg-zinc-300 mb-5">
+        <div id="box" class="box min-w-[60%] h-auto bg-zinc-300 mb-5">
           <!-- top div -->
 
           <div
@@ -214,14 +369,15 @@
               <div class="name-designation">
                 <!-- name -->
                 <h1 class="heading-name text-4xl text-white mb-2 text-center">
-                  <span id="firstName" class="firstName">Abhinav</span>
-                  <span id="lastName" class="lastName"> Rajput </span>
+                  <span id="firstName" class="firstName"></span>
+                  <span id="lastName" class="lastName"> </span>
                 </h1>
 
                 <!-- role -->
-                <h3 id="role" class="role text-white text-2xl text-center">
-                  Front End Developer
-                </h3>
+                <h3
+                  id="resume-role"
+                  class="role text-white text-2xl text-center"
+                ></h3>
               </div>
             </div>
           </div>
@@ -238,23 +394,20 @@
               class="left w-[33%] bg-yellow-50 h-auto flex flex-col overflow-hidden"
             >
               <!-- contact form box -->
-              <div
-                class="contact-section border border-violet-500 p-2 mt-24 flex flex-col gap-2"
-              >
+              <div class="contact-section p-2 mt-24 flex flex-col gap-2">
                 <h3 class="mb-5 text-xl text-center">Contact</h3>
 
                 <!-- phone number -->
                 <p class="border">
                   <i class="fa-solid fa-phone pl-2"></i>
-                  <span id="contact_no" class="pl-2 ml-1"> 8630486678 </span>
+                  <span id="contact_no" class="pl-2 ml-1"> </span>
                 </p>
 
                 <!-- email id -->
 
                 <p class="flex items-center">
                   <i class="fa-regular fa-envelope pl-2"></i>
-                  <span id="email" class="pl-2 ml-1 text-md text-wrap">
-                    abhinav.r@gmail.com
+                  <span id="resume-email" class="pl-2 ml-1 text-md text-wrap">
                   </span>
                 </p>
 
@@ -263,10 +416,9 @@
                 <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-location-dot pl-2 mr-1"></i>
                   <span
-                    id="address"
+                    id="resume-address"
                     class="pl-2 ml-1 text-sm text-md text-wrap"
                   >
-                    MIG-972 Avas Vikas 1, DM road Bulandshahr UP 203001
                   </span>
                 </p>
               </div>
@@ -275,7 +427,7 @@
 
               <div
                 id="skills-section"
-                class="skills-section p-2 mt-5 border border-red-500 flex flex-col gap-2"
+                class="skills-section p-2 mt-5 flex flex-col gap-2"
               >
                 <h3 class="text-center mb-2 text-xl">Skills</h3>
 
@@ -283,16 +435,14 @@
 
                 <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
-                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
-                    JS
-                  </span>
+                  <span class="pl-2 ml-1 text-sm text-md text-wrap"> JS </span>
                 </p>
 
                 <!-- skill 2 -->
 
                 <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
-                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                  <span class="pl-2 ml-1 text-sm text-md text-wrap">
                     HTMl
                   </span>
                 </p>
@@ -301,16 +451,14 @@
 
                 <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
-                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
-                    CSS
-                  </span>
+                  <span class="pl-2 ml-1 text-sm text-md text-wrap"> CSS </span>
                 </p>
 
                 <!-- skill 4 -->
 
                 <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
-                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                  <span class="pl-2 ml-1 text-sm text-md text-wrap">
                     React
                   </span>
                 </p>
@@ -410,19 +558,21 @@
                       id="project-section"
                       class="project-section company-section"
                     >
-                      <h6 id="project" class="education-course project-heading">
-                        LeaderBoard App with sorting
-                      </h6>
+                      <h6
+                        id="resume-project-heading1"
+                        class="education-course project-heading"
+                      ></h6>
                       <p class="project-para">
-                        <span id="project-link" class="project-link"
-                          >https://abhinav.github.io</span
-                        >
+                        <span
+                          id="resume-project-link1"
+                          class="project-link"
+                        ></span>
                       </p>
 
-                      <p class="project-remarks">
-                        This project utilises HTML, CSS,tailwind and JS for
-                        functionality
-                      </p>
+                      <p
+                        class="project-remarks"
+                        id="resume-project-remarks1"
+                      ></p>
                       <hr />
                     </div>
 
@@ -431,19 +581,21 @@
                       id="project-section"
                       class="project-section company-section mt-3"
                     >
-                      <h6 id="project" class="education-course project-heading">
-                        Unsplash Images search - Unsplash API
-                      </h6>
+                      <h6
+                        id="resume-project-heading2"
+                        class="education-course project-heading"
+                      ></h6>
                       <p class="project-para">
-                        <span id="project-link" class="project-link"
-                          >https://unsplash/abhinav.github.io</span
-                        >
+                        <span
+                          id="resume-project-link2"
+                          class="resume-link"
+                        ></span>
                       </p>
 
-                      <p class="project-remarks">
-                        This project utilises HTML, CSS,tailwind and JS for
-                        functionality
-                      </p>
+                      <p
+                        class="project-remarks"
+                        id="resume-project-remarks2"
+                      ></p>
                       <hr />
                     </div>
                   </div>
