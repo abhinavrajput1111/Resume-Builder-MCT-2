@@ -1,0 +1,78 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.experience-section {
+  margin-bottom: 0.7rem;
+}
+
+.experience-company {
+  background-color: aliceblue;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  /* padding: 0.2rem; */
+}
+
+.company {
+  font-weight: 500;
+  /* border: 2px solid red; */
+  padding: 0rem 0.7rem;
+  margin-right: 1rem;
+}
+
+.location {
+  padding: 0rem 0.7rem;
+  /* border: 2px solid red; */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.company-para {
+  margin-bottom: 0.5rem;
+}
+
+.from {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 0rem 1rem;
+  border-radius: 15px;
+}
+
+.to {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 0rem 1rem;
+  border-radius: 15px;
+}
+
+.para-date {
+  margin-bottom: 10px;
+}
+
+/* education section shares many classes to company section */
+/* education section classes */
+.education-section {
+  margin-bottom: 0.7rem;
+  /* padding: 0.5rem 0.5rem */
+  /* border: 2px solid red; */
+}
+
+.education-course {
+  background-color: aliceblue;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+/* project section classes */
+
+.project-link {
+  padding: 10px;
+}
+
+.project-remarks {
+  padding: 10px;
+  /* border: 2px solid green; */
+  font-style: italic;
+}

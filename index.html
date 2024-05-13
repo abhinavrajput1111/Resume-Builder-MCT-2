@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font-awesome link -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="wrapper" class="wrapper">
+      <!-- container start here -->
+
+      <div id="container" class="container flex gap-16">
+        <!-- left div input for taking inputs -->
+        <div
+          id="inputs"
+          class="inputs overflow-y-scroll w-[30%] h-[185vh] bg-slate-300 flex flex-col gap-3 items-center"
+        >
+          <h1
+            class="text-3xl my-3 font-bold bg-blue-500 text-white w-full text-center"
+          >
+            Build Resume
+          </h1>
+
+          <!-- about div start here -->
+
+          <div
+            id="about"
+            class="about-section border border-red-800 w-5/6 my-3"
+          >
+            <!-- about heading -->
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              About
+            </h2>
+
+            <!-- first name -->
+
+            <label for="Fname" class="">First Name:</label><br />
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              class="my-2 px-5 w-full"
+              placeholder="Your First Name"
+            />
+
+            <!-- last name -->
+
+            <label for="lname">Last Name:</label><br />
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              class="my-2 px-5 w-full"
+              placeholder="Your Last Name"
+            />
+            <!-- job role -->
+            <label for="role">Job Role:</label><br />
+            <input
+              type="text"
+              name="role"
+              id="role"
+              class="my-2 px-5 w-full"
+              placeholder="Job Role to apply"
+            />
+
+            <!-- image file -->
+            <label for="Image">Select Image:</label><br />
+
+            <input type="file" src="" alt="" class="my-2" />
+          </div>
+
+          <!-- contact section div -->
+
+          <div id="contact" class="contact w-5/6 my-2">
+            <!-- contact heading -->
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              Contact info
+            </h2>
+
+            <!-- contact no. -->
+            <label for="phone">Contact No.:</label><br />
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              maxlength="10"
+              class="my-2 px-5 w-full"
+              placeholder="Contact Number"
+            />
+
+            <!-- email -->
+            <label for="email">Email:</label><br />
+            <input
+              type="email"
+              name="role"
+              id="role"
+              class="my-2 px-5 w-full"
+              placeholder="Your Email"
+            />
+
+            <label for="Address">Address:</label><br />
+            <input
+              type="text"
+              name="role"
+              id="role"
+              class="my-2 px-5 w-full"
+              placeholder="Place you live in"
+            />
+          </div>
+
+          <!-- professional experience div -->
+
+          <div id="experience" class="experience w-5/6 my-3">
+            <h2
+              id="about-section"
+              class="about text-center text-xl font-semibold my-1"
+            >
+              Professional Experience
+            </h2>
+
+            <label for="company">Job Role:</label><br />
+            <input
+              type="text"
+              name="job role"
+              id="job role"
+              class="my-2 px-5 w-full"
+              placeholder="Designation"
+            />
+
+            <label for="company">Company:</label><br />
+            <input
+              type="text"
+              name="company"
+              id="company"
+              class="my-2 px-5 w-full"
+              placeholder="Your company"
+            />
+
+            <label for="Location">Location:</label><br />
+            <input
+              type="text"
+              name="Location"
+              id="Location"
+              class="my-2 px-5 w-full"
+              placeholder="Your job Location"
+            />
+
+            <label for="from">From:</label><br />
+            <input
+              type="date"
+              name="from"
+              id="from"
+              class="my-2 px-5 w-full"
+              placeholder="started from"
+            />
+
+            <label for="from">To:</label><br />
+            <input
+              type="date"
+              name="to"
+              id="to"
+              class="my-2 px-5 w-full"
+              placeholder="done till"
+            />
+
+            <!-- experience div end -->
+          </div>
+
+          <!-- contact section div end -->
+
+          <!-- left div input end -->
+        </div>
+
+        <!-- box which have whole page  -->
+
+        <div id="box" class="box max-w-[60%] h-auto bg-zinc-300 mb-5">
+          <!-- top div -->
+
+          <div
+            id="top"
+            class="top w-full flex justify-end items-center h-32 bg-blue-700"
+          >
+            <div
+              id="name-contact"
+              class="name-contact flex justify-evenly items-center w-[90%] bg-blue-950 h-28 rounded-l-full"
+            >
+              <div class="image-div w-20 h-20 rounded-full">
+                <img
+                  src="WhatsApp Image 2023-09-19 at 5.55.46 PM.jpeg"
+                  alt=""
+                  id="image"
+                  class="img w-full h-full rounded-full"
+                />
+              </div>
+
+              <div class="name-designation">
+                <!-- name -->
+                <h1 class="heading-name text-4xl text-white mb-2 text-center">
+                  <span id="firstName" class="firstName">Abhinav</span>
+                  <span id="lastName" class="lastName"> Rajput </span>
+                </h1>
+
+                <!-- role -->
+                <h3 id="role" class="role text-white text-2xl text-center">
+                  Front End Developer
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="left-right-wrapper"
+            class="left-right-wrapper flex border border-gray-500"
+          >
+            <!-- left div -->
+
+            <!-- flex-col to vertical align sections of contact ans skills -->
+            <div
+              id="left"
+              class="left w-[33%] bg-yellow-50 h-auto flex flex-col overflow-hidden"
+            >
+              <!-- contact form box -->
+              <div
+                class="contact-section border border-violet-500 p-2 mt-24 flex flex-col gap-2"
+              >
+                <h3 class="mb-5 text-xl text-center">Contact</h3>
+
+                <!-- phone number -->
+                <p class="border">
+                  <i class="fa-solid fa-phone pl-2"></i>
+                  <span id="contact_no" class="pl-2 ml-1"> 8630486678 </span>
+                </p>
+
+                <!-- email id -->
+
+                <p class="flex items-center">
+                  <i class="fa-regular fa-envelope pl-2"></i>
+                  <span id="email" class="pl-2 ml-1 text-md text-wrap">
+                    abhinav.r@gmail.com
+                  </span>
+                </p>
+
+                <!-- Address -->
+
+                <p class="flex items-center text-wrap">
+                  <i class="fa-solid fa-location-dot pl-2 mr-1"></i>
+                  <span
+                    id="address"
+                    class="pl-2 ml-1 text-sm text-md text-wrap"
+                  >
+                    MIG-972 Avas Vikas 1, DM road Bulandshahr UP 203001
+                  </span>
+                </p>
+              </div>
+
+              <!-- Skills section -->
+
+              <div
+                id="skills-section"
+                class="skills-section p-2 mt-5 border border-red-500 flex flex-col gap-2"
+              >
+                <h3 class="text-center mb-2 text-xl">Skills</h3>
+
+                <!-- skill 1 -->
+
+                <p class="flex items-center text-wrap">
+                  <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
+                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                    JS
+                  </span>
+                </p>
+
+                <!-- skill 2 -->
+
+                <p class="flex items-center text-wrap">
+                  <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
+                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                    HTMl
+                  </span>
+                </p>
+
+                <!-- skill 3 -->
+
+                <p class="flex items-center text-wrap">
+                  <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
+                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                    CSS
+                  </span>
+                </p>
+
+                <!-- skill 4 -->
+
+                <p class="flex items-center text-wrap">
+                  <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
+                  <span class="pl-2 ml-1 text-sm border text-md text-wrap">
+                    React
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <!-- right Div -->
+
+            <div id="right" class="right w-[67%] bg-white">
+              <!-- div experience which holds experience data -->
+
+              <div class="right-container flex flex-col items-center w-full">
+                <div
+                  id="experience"
+                  class="experience mt-5 mb-2 p-3 w-[90%] h-auto"
+                >
+                  <div class="rounded-xl bg-blue-950 text-white">
+                    <h2 class="text-2xl text-center my-5">
+                      Professional Experience
+                    </h2>
+                  </div>
+                  <hr />
+
+                  <!-- first experience -->
+
+                  <div id="experience-section" class="experience-section">
+                    <h6 id="experience-company" class="experience-company">
+                      Full Stack Developer
+                    </h6>
+                    <p class="company-para">
+                      <span id="company" class="company">Geekster</span>
+                      <span id="location" class="location">Remote</span>
+                    </p>
+                    <p class="para-date">
+                      <span id="from" class="from">06/06/2019</span> <b>-</b>
+                      <span id="to" class="to">28-04-2020</span>
+                    </p>
+                    <hr />
+                  </div>
+
+                  <!-- second experience -->
+
+                  <div id="experience-section" class="experience-section">
+                    <h6 id="experience-company" class="experience-company">
+                      MEAN Stack Developer
+                    </h6>
+                    <p class="company-para">
+                      <span id="company" class="company">Leetcode</span>
+                      <span id="location" class="location">Remote</span>
+                    </p>
+                    <p class="para-date">
+                      <span id="from" class="from">26/08/2020</span> <b>-</b>
+                      <span id="to" class="to">31-04-2024</span>
+                    </p>
+                    <hr />
+                  </div>
+
+                  <!-- education div -->
+
+                  <div id="education" class="education my-5 w-auto h-auto">
+                    <div class="rounded-xl bg-blue-950 text-white">
+                      <h2 class="text-2xl text-center my-5">Education</h2>
+                    </div>
+                    <!-- First education -->
+
+                    <div id="education-section" class="education-section">
+                      <h6 id="education-course" class="education-course">
+                        Full Stack Developer
+                      </h6>
+                      <p class="education-para company-para">
+                        <span id="Institute" class="Institute company"
+                          >Geekster</span
+                        >
+                        <span
+                          id="Institute-location"
+                          class="Institute-location location"
+                          >Bulandshahr</span
+                        >
+                      </p>
+                      <p class="para-Institute-date">
+                        <span id="from" class="from">06/06/2019</span> <b>-</b>
+                        <span id="to" class="to">28-04-2020</span>
+                      </p>
+                      <hr />
+                    </div>
+                  </div>
+
+                  <!-- Projects Div -->
+
+                  <div id="project" class="project mt-3 mb-2 w-auto h-auto">
+                    <div class="rounded-xl bg-blue-950 text-white">
+                      <h2 class="text-2xl text-center my-5">Projects</h2>
+                    </div>
+                    <!-- project section -->
+                    <!-- first project -->
+                    <div
+                      id="project-section"
+                      class="project-section company-section"
+                    >
+                      <h6 id="project" class="education-course project-heading">
+                        LeaderBoard App with sorting
+                      </h6>
+                      <p class="project-para">
+                        <span id="project-link" class="project-link"
+                          >https://abhinav.github.io</span
+                        >
+                      </p>
+
+                      <p class="project-remarks">
+                        This project utilises HTML, CSS,tailwind and JS for
+                        functionality
+                      </p>
+                      <hr />
+                    </div>
+
+                    <!-- second project -->
+                    <div
+                      id="project-section"
+                      class="project-section company-section mt-3"
+                    >
+                      <h6 id="project" class="education-course project-heading">
+                        Unsplash Images search - Unsplash API
+                      </h6>
+                      <p class="project-para">
+                        <span id="project-link" class="project-link"
+                          >https://unsplash/abhinav.github.io</span
+                        >
+                      </p>
+
+                      <p class="project-remarks">
+                        This project utilises HTML, CSS,tailwind and JS for
+                        functionality
+                      </p>
+                      <hr />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- container end here -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
