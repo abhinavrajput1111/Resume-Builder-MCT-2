@@ -137,18 +137,20 @@
             <input
               type="text"
               name="job role"
-              id="job role"
-              class="my-2 px-5 w-full"
+              id="job_role"
+              class="experience-job-role"
               placeholder="Designation"
+              required
             />
 
             <label for="company">Company:</label><br />
             <input
               type="text"
               name="company"
-              id="company"
-              class="my-2 px-5 w-full"
+              id="experience-company"
+              class="experience-job-role"
               placeholder="Your company"
+              required
             />
 
             <label for="Location">Location:</label><br />
@@ -156,29 +158,49 @@
               type="text"
               name="Location"
               id="Location"
-              class="my-2 px-5 w-full"
+              class="experience-job-role"
               placeholder="Your job Location"
+              required
             />
 
             <label for="from">From:</label><br />
             <input
               type="date"
               name="from"
-              id="from"
-              class="my-2 px-5 w-full"
+              id="experience-from"
+              class="experience-job-role"
               placeholder="started from"
+              required
             />
 
             <label for="from">To:</label><br />
             <input
               type="date"
               name="to"
-              id="to"
-              class="my-2 px-5 w-full"
+              id="experience-to"
+              class="experience-job-role"
               placeholder="done till"
+              required
             />
+            <!-- Add experience -->
 
             <!-- experience div end -->
+          </div>
+
+          <!-- button to add and remove experience -->
+          <div class="flex md:gap-2 gap-1">
+            <button
+              id="Add_data_to_experience"
+              class="bg-blue-950 text-white text-sm px-1 py-1 hover:bg-blue-700"
+            >
+              Add in Resume +
+            </button>
+            <p
+              id="remove-experience"
+              class="bg-red-700 text-white px-1 py-1 hover:bg-red-600 text-sm cursor-pointer"
+            >
+              Remove Last -
+            </p>
           </div>
 
           <!-- professional experience div end -->
@@ -471,20 +493,22 @@
               <!-- div experience which holds experience data -->
 
               <div class="right-container flex flex-col items-center w-full">
+      <div>
+        <div class="rounded-xl bg-blue-950 text-white">
+          <h2 class="text-2xl text-center my-2 mt-3 px-3">
+            Professional Experience
+          </h2>
+        </div>
+        <hr />
                 <div
-                  id="experience"
+                  id="resume_experience"
                   class="experience mt-5 mb-2 p-3 w-[90%] h-auto"
                 >
-                  <div class="rounded-xl bg-blue-950 text-white">
-                    <h2 class="text-2xl text-center my-5">
-                      Professional Experience
-                    </h2>
-                  </div>
-                  <hr />
+            
 
                   <!-- first experience -->
 
-                  <div id="experience-section" class="experience-section">
+                  <!-- <div id="experience-section" class="experience-section">
                     <h6 id="experience-company" class="experience-company">
                       Full Stack Developer
                     </h6>
@@ -497,11 +521,11 @@
                       <span id="to" class="to">28-04-2020</span>
                     </p>
                     <hr />
-                  </div>
+                  </div> -->
 
                   <!-- second experience -->
 
-                  <div id="experience-section" class="experience-section">
+                  <!-- <div id="experience-section" class="experience-section">
                     <h6 id="experience-company" class="experience-company">
                       MEAN Stack Developer
                     </h6>
@@ -514,14 +538,18 @@
                       <span id="to" class="to">31-04-2024</span>
                     </p>
                     <hr />
-                  </div>
+                  
+                  </div> -->
 
+</div>
+</div>
                   <!-- education div -->
 
                   <div id="education" class="education my-5 w-auto h-auto">
                     <div class="rounded-xl bg-blue-950 text-white">
                       <h2 class="text-2xl text-center my-5">Education</h2>
                     </div>
+
                     <!-- First education -->
 
                     <div id="education-section" class="education-section">

@@ -51,6 +51,9 @@ const formProjectDescription2 = document.querySelector("#Project-Description2");
 const formProjectDiv1 = document.querySelector("#project1");
 const formProjectDiv2 = document.querySelector("#project2");
 
+// form experience add
+const formExperienceAdd = document.querySelector("#add-experience");
+
 // ---------------------------------------
 // ---------------------------------------
 
@@ -134,3 +137,156 @@ formProjectDiv2.addEventListener("keyup", () => {
   resumeProjectLink2.innerText = formProjectLink2.value;
   resumeProjectRemarks2.innerText = formProjectDescription2.value;
 });
+
+// class of input box of company  experience-job-role
+// form experience add
+// formExperienceAdd.addEventListener("click", () => {
+//   const parent = document.createElement("div");
+//   parent.classList.add("mb-2", "border", "p-2", "border-blue-700");
+
+//   // job role
+//   const labelJob = document.createElement("label");
+//   labelJob.innerText = "Job Role";
+//   // job role input
+//   const inputJob = document.createElement("input");
+//   inputJob.classList.add("experience-job-role");
+
+//   const labelCompany = document.createElement("label");
+//   labelCompany.innerText = "Company";
+
+//   const inputCompany = document.createElement("input");
+//   inputCompany.classList.add("experience-job-role");
+
+//   // label loaction
+//   const labelLocation = document.createElement("label");
+//   labelLocation.innerText = "Location";
+
+//   const inputLocation = document.createElement("input");
+//   inputLocation.classList.add("experience-job-role");
+
+//   const labelFrom = document.createElement("label");
+//   labelFrom.innerText = "From";
+
+//   const inputFrom = document.createElement("input");
+//   inputFrom.classList.add("experience-job-role");
+//   inputFrom.setAttribute("type", "date");
+
+//   const labelTo = document.createElement("label");
+//   labelTo.innerText = "To";
+
+//   const inputTo = document.createElement("input");
+//   inputTo.classList.add("experience-job-role");
+//   inputTo.setAttribute("type", "date");
+
+//   const hr = document.createElement("hr");
+
+//   parent.append(
+//     labelJob,
+//     inputJob,
+//     labelCompany,
+//     inputCompany,
+//     labelLocation,
+//     inputLocation,
+//     labelFrom,
+//     inputFrom,
+//     labelTo,
+//     inputTo,
+//     hr
+//   );
+//   document.querySelector("#experience").append(parent);
+// });
+
+// array to add experience
+
+let addExperience = [];
+let counter = 0;
+// iska kaam hai, array me experience object push karana index ke sath, aur resume template me wo data dikhana
+
+const job_role = document.querySelector("#job_role");
+const company = document.querySelector("#experience-company");
+const jobLocation = document.querySelector("#Location");
+const experienceFrom = document.querySelector("#experience-from");
+const experienceTo = document.querySelector("#experience-to");
+// this button add experience to array
+const button_experience_add = document.querySelector("#Add_data_to_experience");
+
+button_experience_add.addEventListener("click", () => {
+  let obj = {
+    job: `${job_role.value}`,
+    company: `${company.value}`,
+    location: `${jobLocation.value}`,
+    from: `${experienceFrom.value}`,
+    to: `${experienceTo.value}`,
+  };
+
+  addExperience.push(obj);
+  console.log(addExperience);
+
+  // function responsible to show content in resume
+  showExperienceInResume(addExperience);
+
+  job_role.value = "";
+  company.value = "";
+  jobLocation.value = "";
+  experienceFrom.value = "";
+  experienceTo.value = "";
+
+  alert("Add another experience");
+});
+
+// remove last experience
+
+document.querySelector("#remove-experience").addEventListener("click", () => {
+  addExperience.pop();
+  showExperienceInResume(addExperience);
+  console.log(addExperience);
+});
+
+function showExperienceInResume(data) {
+  let Resumeexperience = document.querySelector("#resume_experience");
+  Resumeexperience.innerText = "";
+  // console.log(data.length);
+  data.forEach((element) => {
+    const parent = document.createElement("parent");
+    parent.classList.add("experience-section");
+
+    const heading = document.createElement("h6");
+    heading.classList.add("experience-company");
+    heading.innerText = element.job;
+
+    const para = document.createElement("p");
+    para.classList.add("company-para");
+    // para.innerText = element.job;
+
+    const spanCompany = document.createElement("span");
+    spanCompany.classList.add("company");
+    spanCompany.innerText = element.company;
+
+    const spanLocation = document.createElement("span");
+    spanLocation.classList.add("location");
+    spanLocation.innerText = element.location;
+
+    const para_date = document.createElement("p");
+    para_date.classList.add("para_date");
+
+    const spanFrom = document.createElement("span");
+    spanFrom.classList.add("from");
+    spanFrom.innerText = element.from;
+
+    const spanTo = document.createElement("span");
+    spanTo.classList.add("to");
+    spanTo.innerText = element.to;
+
+    parent.append(
+      heading,
+      para,
+      spanCompany,
+      spanLocation,
+      para_date,
+      spanFrom,
+      spanTo
+    );
+    Resumeexperience.append(parent);
+  });
+  console.log("hi");
+}

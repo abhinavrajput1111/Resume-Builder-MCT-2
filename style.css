@@ -4,15 +4,27 @@
   box-sizing: border-box;
 }
 
-.experience-section {
+/* .experience-section {
   margin-bottom: 0.7rem;
-}
+} */
 
+.experience-section {
+  margin-bottom: 1rem;
+}
 .experience-company {
   background-color: aliceblue;
   font-weight: 500;
   margin-bottom: 0.3rem;
+  margin-top: 0.5rem;
   /* padding: 0.2rem; */
+}
+
+.experience-job-role {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 .company {
@@ -38,6 +50,7 @@
   color: white;
   padding: 0rem 1rem;
   border-radius: 15px;
+  margin-right: 1rem;
 }
 
 .to {
@@ -47,8 +60,8 @@
   border-radius: 15px;
 }
 
-.para-date {
-  margin-bottom: 10px;
+.para_date {
+  margin-bottom: 0.6rem;
 }
 
 /* education section shares many classes to company section */
