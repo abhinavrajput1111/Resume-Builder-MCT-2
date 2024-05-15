@@ -1,4 +1,6 @@
-// education div ki remove education shi krni hai
+// wrapper div
+const whole_container = document.querySelector("#whole_container");
+const wrapper = document.querySelector("#wrapper");
 
 // form-about
 const formAbout = document.querySelector("#form-about");
@@ -224,7 +226,7 @@ button_experience_add.addEventListener("click", () => {
   experienceFrom.value = "";
   experienceTo.value = "";
 
-  alert("Add another experience");
+  // alert("Add another experience");
 });
 
 // remove last experience
@@ -503,3 +505,39 @@ removeSkills.addEventListener("click", () => {
   skills.pop();
   showSkills(skills);
 });
+
+// button section
+// button section
+
+const print = document.querySelector("#print");
+const download = document.querySelector("#download");
+const Job_suggestion = document.querySelector("#Job_suggestion");
+const project_suggestion = document.querySelector("#project_suggestion");
+
+// print container
+print.addEventListener("click", () => {
+  window.print(wrapper);
+});
+
+// download;
+download.addEventListener("click", generatePDF);
+
+function generatePDF() {
+  const element = document.getElementById("whole_container");
+  document.getElementById("wrapper").style.display = "block";
+  document.getElementById("wrapper").style.marginTop = "0px";
+  document.getElementById("wrapper").style.border = "1px solid black";
+  html2pdf().from(element).save("download.pdf");
+}
+
+function downloadCode() {
+  var x = document.getElementById("wrapper");
+  generatePDF();
+  setTimeout(function () {
+    window.location = window.location;
+  }, 3000);
+}
+
+// Job suggestion API
+
+// Job_suggestion.addEventListener("click", showJobsResults)
