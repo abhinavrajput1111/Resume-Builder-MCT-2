@@ -207,9 +207,9 @@
 
           <!-- education div start-->
 
-          <div id="experience" class="experience w-5/6 my-3">
+          <div id="form-education" class="experience w-5/6 my-3">
             <h2
-              id="about-section"
+              id="education-about"
               class="about text-center text-xl font-semibold my-1"
             >
               Education
@@ -260,6 +260,24 @@
               placeholder="done till"
             />
           </div>
+
+          <div class="flex gap-2">
+            <!-- add education -->
+            <button
+              id="add_education"
+              class="px-2 py-1 text-sm bg-blue-950 text-white hover:bg-blue-800"
+            >
+              Add Education
+            </button>
+
+            <!-- remove education -->
+            <button
+              id="remove_education"
+              class="px-2 py-1 text-sm bg-red-700 text-white hover:bg-red-600"
+            >
+              Remove Education
+            </button>
+          </div>
           <!-- course div end -->
 
           <!-- skills div -->
@@ -282,6 +300,23 @@
             />
           </div>
 
+          <div class="flex gap-2 mb-10">
+            <!-- add education -->
+            <button
+              id="add_skills"
+              class="px-2 py-1 text-sm bg-blue-950 text-white hover:bg-blue-800"
+            >
+              Add Skills
+            </button>
+
+            <!-- remove education -->
+            <button
+              id="remove_skills"
+              class="px-2 py-1 text-sm bg-red-700 text-white hover:bg-red-600"
+            >
+              Remove Project
+            </button>
+          </div>
           <!-- skills div end -->
 
           <!-- project div start -->
@@ -294,13 +329,13 @@
               Projects
             </h2>
 
-            <p class="my-2 text-red-600">
+            <!-- <p class="my-2 text-red-600">
               <b>NOTE:</b> Adding 2 Projects is mandatory, It will help your
               resume to shirtlist.
-            </p>
+            </p> -->
 
             <div id="project1">
-              <label for="Projects">Project 1:</label><br />
+              <label for="Projects">Project:</label><br />
               <input
                 type="text"
                 name="Project-name"
@@ -309,7 +344,7 @@
                 placeholder="Enter Project name here"
               />
 
-              <label for="Projects-link1">Project 1 github Link:</label><br />
+              <label for="Projects-link1">Github Link:</label><br />
               <input
                 type="text"
                 name="Project-link1"
@@ -318,7 +353,7 @@
                 placeholder="Enter Project link here"
               />
 
-              <label for="Projects-link">Project 1 Description:</label><br />
+              <label for="Projects-link">Project Description:</label><br />
               <input
                 type="text"
                 name="Project-Description1"
@@ -331,7 +366,7 @@
             </div>
             <!-- project 2 -->
 
-            <div id="project2">
+            <!-- <div id="project2">
               <label for="Project 2">Project 2:</label><br />
               <input
                 type="text"
@@ -359,7 +394,25 @@
                 placeholder="Enter Project Description here"
               />
               <hr />
-            </div>
+            </div> -->
+          </div>
+
+          <div class="flex gap-2 mb-10">
+            <!-- add education -->
+            <button
+              id="add-Project"
+              class="px-2 py-1 text-sm bg-blue-950 text-white hover:bg-blue-800"
+            >
+              Add Project
+            </button>
+
+            <!-- remove education -->
+            <button
+              id="remove_project"
+              class="px-2 py-1 text-sm bg-red-700 text-white hover:bg-red-600"
+            >
+              Remove Project
+            </button>
           </div>
           <!-- project description div end -->
 
@@ -368,7 +421,10 @@
 
         <!-- box which have whole page  -->
 
-        <div id="box" class="box min-w-[60%] h-auto bg-zinc-300 mb-5">
+        <div
+          id="box"
+          class="box md:min-w-[60%] sm:[40%] h-full bg-zinc-300 mb-5"
+        >
           <!-- top div -->
 
           <div
@@ -404,10 +460,7 @@
             </div>
           </div>
 
-          <div
-            id="left-right-wrapper"
-            class="left-right-wrapper flex border border-gray-500"
-          >
+          <div id="left-right-wrapper" class="left-right-wrapper flex">
             <!-- left div -->
 
             <!-- flex-col to vertical align sections of contact ans skills -->
@@ -420,7 +473,7 @@
                 <h3 class="mb-5 text-xl text-center">Contact</h3>
 
                 <!-- phone number -->
-                <p class="border">
+                <p class="">
                   <i class="fa-solid fa-phone pl-2"></i>
                   <span id="contact_no" class="pl-2 ml-1"> </span>
                 </p>
@@ -454,36 +507,38 @@
                 <h3 class="text-center mb-2 text-xl">Skills</h3>
 
                 <!-- skill 1 -->
-
-                <p class="flex items-center text-wrap">
-                  <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
-                  <span class="pl-2 ml-1 text-sm text-md text-wrap"> JS </span>
-                </p>
-
+                <div id="skill_wrapper">
+                  <!-- <p class="flex items-center text-wrap">
+                    <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
+                    <span class="pl-2 ml-1 text-sm text-md text-wrap">
+                      JS
+                    </span>
+                  </p> -->
+                </div>
                 <!-- skill 2 -->
 
-                <p class="flex items-center text-wrap">
+                <!-- <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
                   <span class="pl-2 ml-1 text-sm text-md text-wrap">
                     HTMl
                   </span>
-                </p>
+                </p> -->
 
                 <!-- skill 3 -->
 
-                <p class="flex items-center text-wrap">
+                <!-- <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
                   <span class="pl-2 ml-1 text-sm text-md text-wrap"> CSS </span>
-                </p>
+                </p> -->
 
                 <!-- skill 4 -->
 
-                <p class="flex items-center text-wrap">
+                <!-- <p class="flex items-center text-wrap">
                   <i class="fa-solid fa-caret-right ml-2 pr-1"></i>
                   <span class="pl-2 ml-1 text-sm text-md text-wrap">
                     React
                   </span>
-                </p>
+                </p> -->
               </div>
             </div>
 
@@ -493,22 +548,20 @@
               <!-- div experience which holds experience data -->
 
               <div class="right-container flex flex-col items-center w-full">
-      <div>
-        <div class="rounded-xl bg-blue-950 text-white">
-          <h2 class="text-2xl text-center my-2 mt-3 px-3">
-            Professional Experience
-          </h2>
-        </div>
-        <hr />
-                <div
-                  id="resume_experience"
-                  class="experience mt-5 mb-2 p-3 w-[90%] h-auto"
-                >
-            
+                <div>
+                  <div class="rounded-xl bg-blue-950 text-white px-3">
+                    <h2 class="text-2xl text-center my-2 mt-3">
+                      Professional Experience
+                    </h2>
+                  </div>
+                  <hr />
+                  <div
+                    id="resume_experience"
+                    class="experience mt-5 mb-2 p-3 w-[90%] h-auto"
+                  >
+                    <!-- first experience -->
 
-                  <!-- first experience -->
-
-                  <!-- <div id="experience-section" class="experience-section">
+                    <!-- <div id="experience-section" class="experience-section">
                     <h6 id="experience-company" class="experience-company">
                       Full Stack Developer
                     </h6>
@@ -523,9 +576,9 @@
                     <hr />
                   </div> -->
 
-                  <!-- second experience -->
+                    <!-- second experience -->
 
-                  <!-- <div id="experience-section" class="experience-section">
+                    <!-- <div id="experience-section" class="experience-section">
                     <h6 id="experience-company" class="experience-company">
                       MEAN Stack Developer
                     </h6>
@@ -540,24 +593,23 @@
                     <hr />
                   
                   </div> -->
+                  </div>
+                </div>
+                <!-- education div -->
 
-</div>
-</div>
-                  <!-- education div -->
+                <div id="education" class="education my-5 w-auto h-auto">
+                  <div class="rounded-xl bg-blue-950 text-white px-8">
+                    <h2 class="text-2xl text-center my-5">Education</h2>
+                  </div>
 
-                  <div id="education" class="education my-5 w-auto h-auto">
-                    <div class="rounded-xl bg-blue-950 text-white">
-                      <h2 class="text-2xl text-center my-5">Education</h2>
-                    </div>
-
-                    <!-- First education -->
-
-                    <div id="education-section" class="education-section">
+                  <!-- First education -->
+                  <div id="education-wrapper">
+                    <!-- <div id="education-section" class="education-section">
                       <h6 id="education-course" class="education-course">
                         Full Stack Developer
                       </h6>
                       <p class="education-para company-para">
-                        <span id="Institute" class="Institute company"
+                        <span id="Institute" class="Institute_company"
                           >Geekster</span
                         >
                         <span
@@ -571,17 +623,19 @@
                         <span id="to" class="to">28-04-2020</span>
                       </p>
                       <hr />
-                    </div>
+                    </div> -->
                   </div>
+                </div>
 
-                  <!-- Projects Div -->
+                <!-- Projects Div -->
 
-                  <div id="project" class="project mt-3 mb-2 w-auto h-auto">
-                    <div class="rounded-xl bg-blue-950 text-white">
-                      <h2 class="text-2xl text-center my-5">Projects</h2>
-                    </div>
-                    <!-- project section -->
-                    <!-- first project -->
+                <div id="project" class="project mt-3 mb-2 w-auto h-auto">
+                  <div class="rounded-xl bg-blue-950 text-white px-3">
+                    <h2 class="text-2xl text-center my-5">Projects</h2>
+                  </div>
+                  <!-- project section -->
+                  <!-- first project -->
+                  <div id="project_wrapper">
                     <div
                       id="project-section"
                       class="project-section company-section"
@@ -596,46 +650,46 @@
                           class="project-link"
                         ></span>
                       </p>
-
                       <p
                         class="project-remarks"
                         id="resume-project-remarks1"
                       ></p>
                       <hr />
                     </div>
-
-                    <!-- second project -->
-                    <div
-                      id="project-section"
-                      class="project-section company-section mt-3"
-                    >
-                      <h6
-                        id="resume-project-heading2"
-                        class="education-course project-heading"
-                      ></h6>
-                      <p class="project-para">
-                        <span
-                          id="resume-project-link2"
-                          class="resume-link"
-                        ></span>
-                      </p>
-
-                      <p
-                        class="project-remarks"
-                        id="resume-project-remarks2"
-                      ></p>
-                      <hr />
-                    </div>
                   </div>
+                  <!-- buttons of project div -->
+
+                  <!-- second project -->
+                  <!-- <div
+                    id="project-section"
+                    class="project-section company-section mt-3"
+                  >
+                    <h6
+                      id="resume-project-heading2"
+                      class="education-course project-heading"
+                    ></h6>
+                    <p class="project-para">
+                      <span
+                        id="resume-project-link2"
+                        class="resume-link"
+                      ></span>
+                    </p>
+
+                    <p class="project-remarks" id="resume-project-remarks2"></p>
+                    <hr />
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- container end here -->
       </div>
+
+      <!-- container end here -->
+
+      <!-- wrapper end here -->
     </div>
+    <!-- </div> -->
 
     <script src="script.js"></script>
   </body>

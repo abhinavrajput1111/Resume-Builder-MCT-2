@@ -1,3 +1,5 @@
+// education div ki remove education shi krni hai
+
 // form-about
 const formAbout = document.querySelector("#form-about");
 
@@ -24,32 +26,21 @@ const formEmail = document.querySelector("#form-email");
 
 const formAddress = document.querySelector("#form-address");
 
-// form project name 1
-const formProject1 = document.querySelector("#form-Project-name1");
+// // form project name 2
+// const formProject2 = document.querySelector("#form-Project-name2");
 
-// Project-link1
+// // Project-link2
 
-const formProjectLink1 = document.querySelector("#Project-link1");
+// const formProjectLink2 = document.querySelector("#Project-link2");
 
-// Project-Description1
+// // console.log(formProjectLink2);
+// // Project-Description2
 
-const formProjectDescription1 = document.querySelector("#Project-Description1");
+// const formProjectDescription2 = document.querySelector("#Project-Description2");
 
-// form project name 2
-const formProject2 = document.querySelector("#form-Project-name2");
-
-// Project-link2
-
-const formProjectLink2 = document.querySelector("#Project-link2");
-
-// console.log(formProjectLink2);
-// Project-Description2
-
-const formProjectDescription2 = document.querySelector("#Project-Description2");
-
-// project 1
-const formProjectDiv1 = document.querySelector("#project1");
-const formProjectDiv2 = document.querySelector("#project2");
+// // project 1
+// const formProjectDiv1 = document.querySelector("#project1");
+// const formProjectDiv2 = document.querySelector("#project2");
 
 // form experience add
 const formExperienceAdd = document.querySelector("#add-experience");
@@ -124,19 +115,19 @@ formContact.addEventListener("keyup", () => {
   resumeAddress.innerText = formAddress.value;
 });
 
-formProjectDiv1.addEventListener("keyup", () => {
-  resumeProjectHeading1.innerText = formProject1.value;
-  resumeProjectlink1.innerText = formProjectLink1.value;
-  resumeProjectRemarks1.innerText = formProjectDescription1.value;
-});
+// formProjectDiv1.addEventListener("keyup", () => {
+//   resumeProjectHeading1.innerText = formProject1.value;
+//   resumeProjectlink1.innerText = formProjectLink1.value;
+//   resumeProjectRemarks1.innerText = formProjectDescription1.value;
+// });
 
-formProjectDiv2.addEventListener("keyup", () => {
-  //   resumeProjectHeading2.innerText = formProject2.value;
-  resumeProjectHeading2.innerText = formProject2.value;
-  //   resumeProjectlink2.innerText = formProjectLink2.value;
-  resumeProjectLink2.innerText = formProjectLink2.value;
-  resumeProjectRemarks2.innerText = formProjectDescription2.value;
-});
+// formProjectDiv2.addEventListener("keyup", () => {
+//   //   resumeProjectHeading2.innerText = formProject2.value;
+//   resumeProjectHeading2.innerText = formProject2.value;
+//   //   resumeProjectlink2.innerText = formProjectLink2.value;
+//   resumeProjectLink2.innerText = formProjectLink2.value;
+//   resumeProjectRemarks2.innerText = formProjectDescription2.value;
+// });
 
 // class of input box of company  experience-job-role
 // form experience add
@@ -196,10 +187,12 @@ formProjectDiv2.addEventListener("keyup", () => {
 //   document.querySelector("#experience").append(parent);
 // });
 
+// Experience Section code // Experience Section code
+
 // array to add experience
 
 let addExperience = [];
-let counter = 0;
+// let counter = 0;
 // iska kaam hai, array me experience object push karana index ke sath, aur resume template me wo data dikhana
 
 const job_role = document.querySelector("#job_role");
@@ -290,3 +283,223 @@ function showExperienceInResume(data) {
   });
   console.log("hi");
 }
+
+// Experience Section code end here
+
+//
+// Education section code start here
+
+let educationArray = [];
+
+// collage name
+const Institute = document.querySelector("#Institute");
+const course = document.querySelector("#course");
+const Institute_location = document.querySelector("#Institute-location");
+const course_from = document.querySelector("#course-from");
+const course_to = document.querySelector("#course-to");
+
+const addEducationbtn = document.querySelector("#add_education");
+const removeEducationbtn = document.querySelector("#remove_education");
+
+addEducationbtn.addEventListener("click", getEducation);
+
+function getEducation() {
+  let obj = {
+    Institute: `${Institute.value}`,
+    Course: `${course.value}`,
+    location: `${Institute_location.value}`,
+    From: `${course_from.value}`,
+    To: `${course_to.value}`,
+  };
+  console.log("clicked");
+  educationArray.push(obj);
+  // console.log(educationArray);
+
+  Institute.value = "";
+  course.value = "";
+  Institute_location.value = "";
+  course_from.value = "";
+  course_to.value = "";
+
+  showEducationResume(educationArray);
+}
+
+function showEducationResume(data) {
+  const education_wrapper = document.querySelector("#education-wrapper");
+  education_wrapper.innerText = "";
+
+  console.log(education_wrapper);
+
+  data.forEach((element) => {
+    const parent = document.createElement("parent");
+    parent.classList.add("education-section", "mb-2");
+
+    const Institute = document.createElement("h6");
+    Institute.classList.add("education-course", "mt-2");
+    Institute.innerText = element.Institute;
+
+    const para = document.createElement("p");
+    para.classList.add("education-para", "company-para");
+    // para.innerText = element.job;
+
+    const EducationCourse = document.createElement("span");
+    EducationCourse.classList.add("Institute_company");
+    EducationCourse.innerText = element.Course;
+
+    const educationLocation = document.createElement("span");
+    educationLocation.classList.add("location", "Institute-location");
+    educationLocation.innerText = element.location;
+
+    const para_date = document.createElement("p");
+    para_date.classList.add("para-Institute-date");
+
+    const educationFrom = document.createElement("span");
+    educationFrom.classList.add("from");
+    educationFrom.innerText = element.From;
+
+    const educationTo = document.createElement("span");
+    educationTo.classList.add("to");
+    educationTo.innerText = element.To;
+
+    parent.append(
+      Institute,
+      para,
+      EducationCourse,
+      educationLocation,
+      para_date,
+      educationFrom,
+      educationTo
+    );
+    education_wrapper.append(parent);
+  });
+  console.log("hi");
+}
+
+removeEducationbtn.addEventListener("click", () => {
+  educationArray.pop();
+  showEducationResume(educationArray);
+});
+
+// dynamic project div start here
+
+// form project name 1
+const formProject1 = document.querySelector("#form-Project-name1");
+
+// Project-link1
+
+const formProjectLink1 = document.querySelector("#Project-link1");
+
+// Project-Description1
+
+const formProjectDescription1 = document.querySelector("#Project-Description1");
+
+// btn add project
+const addProject = document.querySelector("#add-Project");
+// btn remove project
+const removeProject = document.querySelector("#remove_project");
+const projectWrapper = document.querySelector("#project_wrapper");
+
+// console.log(projectWrapper);
+// array to store projects
+
+let projects = [];
+
+addProject.addEventListener("click", () => {
+  let obj = {
+    projectName: `${formProject1.value}`,
+    projectLink: `${formProjectLink1.value}`,
+    projectDescription: `${formProjectDescription1.value}`,
+  };
+
+  projects.push(obj);
+  console.log(projects);
+
+  formProject1.value = "";
+  formProjectLink1.value = "";
+  formProjectDescription1.value = "";
+
+  showProjects(projects);
+});
+
+function showProjects(data) {
+  projectWrapper.innerText = "";
+
+  data.forEach((project) => {
+    const parent = document.createElement("p");
+    parent.classList.add("project-section", "company-section");
+
+    const heading = document.createElement("h6");
+    heading.classList.add("education-course", "project-heading");
+    heading.innerText = project.projectName;
+
+    const para = document.createElement("p");
+    para.classList.add("project-para");
+
+    const span = document.createElement("span");
+    span.classList.add("project-link");
+    span.innerText = project.projectLink;
+
+    const remarks = document.createElement("p");
+    remarks.classList.add("project-remarks");
+    remarks.innerText = project.projectDescription;
+
+    const hr = document.createElement("hr");
+
+    parent.append(heading, para, span, remarks, hr);
+    projectWrapper.append(parent);
+  });
+}
+
+removeProject.addEventListener("click", () => {
+  projects.pop();
+  console.log("removed", projects);
+  showProjects(projects);
+});
+
+// Skills section
+// Skills section
+
+const FormSkills = document.querySelector("#form-skills");
+const removeSkills = document.querySelector("#remove_skills");
+const add_skills = document.querySelector("#add_skills");
+const skill_wrapper = document.querySelector("#skill_wrapper");
+
+let skills = [];
+
+add_skills.addEventListener("click", () => {
+  let skill = {
+    skill: `${FormSkills.value}`,
+  };
+  skills.push(skill);
+  // console.log(skills);
+  FormSkills.value = "";
+  showSkills(skills);
+});
+
+function showSkills(data) {
+  skill_wrapper.innerText = "";
+
+  data.forEach((skill) => {
+    const parent = document.createElement("div");
+    parent.classList.add("skill_parent");
+
+    const ul = document.createElement("ul");
+    const li = document.createElement("li");
+    li.innerText = skill.skill;
+    ul.appendChild(li);
+    // ul.style.listStyleType = "bullet"; // or use "disc", "circle", "square", etc.
+
+    // const br = document.createElement("br");
+    const hr = document.createElement("hr");
+
+    parent.append(ul, hr);
+    skill_wrapper.append(parent);
+
+    console.log(skills);
+  });
+}
+
+removeSkills.addEventListener("click", () => {
+  skills.pop();
+  showSkills(skills);
+});

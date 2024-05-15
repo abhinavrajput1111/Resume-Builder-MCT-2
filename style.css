@@ -88,4 +88,14 @@
   padding: 10px;
   /* border: 2px solid green; */
   font-style: italic;
+  /* min-width: 80%; */
+}
+
+.skill_parent {
+  margin-left: 1rem;
+  margin-right: auto;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: medium;
+  font-weight: 400;
+  text-align: center;
 }
