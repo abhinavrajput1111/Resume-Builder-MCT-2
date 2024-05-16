@@ -555,9 +555,12 @@ function downloadCode() {
 // output div to show fetched data from an API
 
 const output = document.querySelector("#output");
+const note_scroll = document.querySelector("#note-scroll");
 
 Job_suggestion.addEventListener("click", () => {
   jobs_search(skillsString);
+  let output = note_scroll;
+  output.innerText = "Scroll Down to see recommendations";
 });
 
 function jobs_search(skillsString) {
@@ -593,13 +596,7 @@ function showJobs_suggestions(data) {
     );
 
     const img_heading_wrapper = document.createElement("div");
-    img_heading_wrapper.classList.add(
-      "img_heading_wrapper",
-      "my-1",
-      "px-2",
-      "border",
-      "border-violet-300"
-    );
+    img_heading_wrapper.classList.add("img_heading_wrapper", "my-1", "px-2");
 
     // const img = document.createElement("img");
     // img.classList.add("img_employer", "my-1");
@@ -650,4 +647,51 @@ function showJobs_suggestions(data) {
     parent.append(img_heading_wrapper, job_city, para, button);
     output.append(parent);
   });
+}
+
+// Project recommendation work here
+
+// console.log(project_suggestion);
+
+project_suggestion.addEventListener("click", () => {
+  console.log("clicked");
+  projectRecommendationData(skills);
+});
+
+async function projectRecommendationData(skills) {
+  const apiKey = "AIzaSyCYtPML75kcG-s8_lNzhBNWVH04fhCMvrc";
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+
+  const data = {
+    contents: [
+      {
+        parts: [
+          {
+            text: ` ${skills} suggest a project with these skills`,
+          },
+        ],
+      },
+    ],
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      // console.log(result);
+      showProjects(result["candidates"]["0"]["content"]["parts"]["0"]["text"]);
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function showProjects(data) {
+  output.innerText = "";
+  const para = document.createElement("p");
+  para.innerText = data;
+  output.append(para);
 }

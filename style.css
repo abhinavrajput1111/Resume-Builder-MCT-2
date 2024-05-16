@@ -99,3 +99,9 @@
   font-weight: 400;
   text-align: center;
 }
+
+#note-scroll {
+  text-align: center;
+  font-size: large;
+  color: maroon;
+}
