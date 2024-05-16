@@ -468,15 +468,26 @@ const skill_wrapper = document.querySelector("#skill_wrapper");
 
 let skills = [];
 
+// creating string with skill entered as fromskills value to pass it into job search API.
+// creating string with skill entered as fromskills value to pass it into job search API.
+
+let skillsString = "";
+
 add_skills.addEventListener("click", () => {
   let skill = {
     skill: `${FormSkills.value}`,
   };
   skills.push(skill);
+
+  // to make a string to pass into jobs suggestion api
+
+  skillsString = skillsString + " " + FormSkills.value;
   // console.log(skills);
   FormSkills.value = "";
   showSkills(skills);
 });
+
+// console.log(skillsString);
 
 function showSkills(data) {
   skill_wrapper.innerText = "";
@@ -497,7 +508,7 @@ function showSkills(data) {
     parent.append(ul, hr);
     skill_wrapper.append(parent);
 
-    console.log(skills);
+    // console.log(skills);
   });
 }
 
@@ -539,5 +550,104 @@ function downloadCode() {
 }
 
 // Job suggestion API
+// Job suggestion API
 
-// Job_suggestion.addEventListener("click", showJobsResults)
+// output div to show fetched data from an API
+
+const output = document.querySelector("#output");
+
+Job_suggestion.addEventListener("click", () => {
+  jobs_search(skillsString);
+});
+
+function jobs_search(skillsString) {
+  const url = `https://jsearch.p.rapidapi.com/search?query=${skillsString} %2C%20India&page=1&num_pages=1`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "a6f775a0edmsh508446ebc358d84p1b8964jsn28dbde94c6fb",
+      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+    },
+  };
+  getData(url, options);
+}
+
+async function getData(url, options) {
+  const response = await fetch(url, options);
+  const result = await response.json();
+  console.log(result);
+  showJobs_suggestions(result.data);
+}
+
+function showJobs_suggestions(data) {
+  output.innerText = "";
+
+  data.forEach((jobs) => {
+    const parent = document.createElement("div");
+    parent.classList.add(
+      "jobs_search_parent",
+      "border",
+      "border-gray-500",
+      "p-3",
+      "my-2"
+    );
+
+    const img_heading_wrapper = document.createElement("div");
+    img_heading_wrapper.classList.add(
+      "img_heading_wrapper",
+      "my-1",
+      "px-2",
+      "border",
+      "border-violet-300"
+    );
+
+    // const img = document.createElement("img");
+    // img.classList.add("img_employer", "my-1");
+    // img.src = jobs.employer_logo;
+
+    const job_heading = document.createElement("h3");
+    job_heading.classList.add(
+      "job_heading",
+      "my-1",
+      "px-2",
+      "text-lg",
+      "text-center"
+    );
+    job_heading.innerText = jobs.job_title;
+
+    img_heading_wrapper.append(job_heading);
+
+    const job_city = document.createElement("p");
+    job_city.classList.add("job_city");
+    job_city.innerText = jobs.job_city;
+
+    const para = document.createElement("p");
+    para.classList.add(
+      "para_jobs_description",
+      "p-2",
+      "text-wrap",
+      "w-auto",
+      "h-auto",
+      "text-sm"
+    );
+    para.innerText = jobs.job_description;
+
+    const button = document.createElement("button");
+    button.classList.add(
+      "apply_button",
+      "px-3",
+      "py-1",
+      "bg-yellow-700",
+      "hover:bg-yellow-500",
+      "text-white",
+      "h-auto",
+      "w-auto",
+      "mx-auto"
+    );
+    button.innerText = "Apply Now";
+    button.href = jobs.jobs_apply_link;
+    // parent
+    parent.append(img_heading_wrapper, job_city, para, button);
+    output.append(parent);
+  });
+}
