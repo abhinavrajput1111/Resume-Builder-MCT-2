@@ -105,3 +105,18 @@
   font-size: large;
   color: maroon;
 }
+
+.heading_main {
+  background: linear-gradient(145deg, #2e3192, #1bffff);
+  color: white;
+  font-weight: bolder;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.top {
+  background: linear-gradient(145deg, #2e3192, #1bffff);
+}
+
+/* .name-contact {
+  background: linear-gradient(145deg, #10b4b4, #2e3192);
+} */

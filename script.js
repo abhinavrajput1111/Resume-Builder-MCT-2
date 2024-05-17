@@ -28,23 +28,6 @@ const formEmail = document.querySelector("#form-email");
 
 const formAddress = document.querySelector("#form-address");
 
-// // form project name 2
-// const formProject2 = document.querySelector("#form-Project-name2");
-
-// // Project-link2
-
-// const formProjectLink2 = document.querySelector("#Project-link2");
-
-// // console.log(formProjectLink2);
-// // Project-Description2
-
-// const formProjectDescription2 = document.querySelector("#Project-Description2");
-
-// // project 1
-// const formProjectDiv1 = document.querySelector("#project1");
-// const formProjectDiv2 = document.querySelector("#project2");
-
-// form experience add
 const formExperienceAdd = document.querySelector("#add-experience");
 
 // ---------------------------------------
@@ -104,9 +87,8 @@ formAbout.addEventListener("keyup", () => {
   resumeLastName.innerText = formLname.value;
 
   resumeRole.innerText = formJobrole.value;
-  // Not working
 
-  //   resumeImage.src = formImage.value;
+  resumeImage.src = formImage.value;
 });
 
 formContact.addEventListener("keyup", () => {
@@ -423,6 +405,8 @@ addProject.addEventListener("click", () => {
   showProjects(projects);
 });
 
+console.log(projectWrapper);
+
 function showProjects(data) {
   projectWrapper.innerText = "";
 
@@ -535,14 +519,14 @@ download.addEventListener("click", generatePDF);
 
 function generatePDF() {
   const element = document.getElementById("whole_container");
-  document.getElementById("wrapper").style.display = "block";
-  document.getElementById("wrapper").style.marginTop = "0px";
-  document.getElementById("wrapper").style.border = "1px solid black";
-  html2pdf().from(element).save("download.pdf");
+  document.getElementById("whole_container").style.display = "block";
+  document.getElementById("whole_container").style.marginTop = "0px";
+  document.getElementById("whole_container").style.border = "1px solid black";
+  html2pdf().from(element).save("resumedownload.pdf");
 }
 
 function downloadCode() {
-  var x = document.getElementById("wrapper");
+  var x = document.getElementById("whole_container");
   generatePDF();
   setTimeout(function () {
     window.location = window.location;
@@ -654,7 +638,7 @@ function showJobs_suggestions(data) {
 // console.log(project_suggestion);
 
 project_suggestion.addEventListener("click", () => {
-  console.log("clicked");
+  // console.log("clicked");
   projectRecommendationData(skills);
 });
 
@@ -684,12 +668,14 @@ async function projectRecommendationData(skills) {
     .then((response) => response.json())
     .then((result) => {
       // console.log(result);
-      showProjects(result["candidates"]["0"]["content"]["parts"]["0"]["text"]);
+      showProjectsOnline(
+        result["candidates"]["0"]["content"]["parts"]["0"]["text"]
+      );
     })
     .catch((error) => console.error("Error:", error));
 }
 
-function showProjects(data) {
+function showProjectsOnline(data) {
   output.innerText = "";
   const para = document.createElement("p");
   para.innerText = data;

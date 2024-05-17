@@ -18,18 +18,29 @@
     />
   </head>
   <body>
-    <div id="whole_container">
-      <div id="wrapper" class="wrapper">
+    <div id="whole_container" class="w-full h-screen">
+      <div
+        class="heading_main w-full md:h-28 h-16 text-wrap md:mb-10 mb-6 bg-red-500 flex md:gap-5 md:items-center"
+      >
+        <div class="md:h-20 h-12 w-auto ml-5">
+          <img src="image_resume.webp" alt="" class="h-full w-auto" />
+        </div>
+        <div class="md:text-3xl text-xl">
+          <h3>Next Gen inbuilt AI Resume Builder</h3>
+        </div>
+      </div>
+
+      <div id="wrapper" class="wrapper md:w-full h-screen">
         <!-- container start here -->
 
-        <div id="container" class="container flex gap-16">
+        <div id="container" class="container md:flex md:gap-16 gap-10">
           <!-- left div input for taking inputs -->
           <div
             id="inputs"
-            class="inputs overflow-y-scroll w-[30%] h-[185vh] bg-slate-300 flex flex-col gap-3 items-center"
+            class="inputs overflow-y-scroll md:w-[30%] md:h-[185vh] w-screen h-screen bg-slate-300 flex flex-col gap-3 items-center md:mb-0 mb-16"
           >
             <h1
-              class="text-3xl my-3 font-bold bg-blue-500 text-white w-full text-center"
+              class="md:text-3xl md:my-3 text-xl my-1 md:py-1 py-2 font-bold bg-blue-500 text-white w-full text-center"
             >
               Build Resume
             </h1>
@@ -77,9 +88,9 @@
               />
 
               <!-- image file -->
-              <label for="Image">Select Image:</label><br />
+              <!-- <label for="Image">Select Image:</label><br />
 
-              <input type="file" src="" alt="" class="my-2" id="img" />
+              <input type="file" src="" alt="" class="my-2" id="img" /> -->
             </div>
 
             <!-- contact section div -->
@@ -434,16 +445,16 @@
             >
               <div
                 id="name-contact"
-                class="name-contact flex justify-evenly items-center w-[90%] bg-blue-950 h-28 rounded-l-full"
+                class="name-contact flex justify-evenly items-center w-[80%] bg-blue-950 md:h-24 h-16 rounded-l-full"
               >
-                <div class="image-div w-20 h-20 rounded-full">
+                <!-- <div class="image-div w-20 h-20 rounded-full">
                   <img
                     src="WhatsApp Image 2023-09-19 at 5.55.46 PM.jpeg"
                     alt=""
                     id="image"
                     class="img w-full h-full rounded-full"
                   />
-                </div>
+                </div> -->
 
                 <div class="name-designation">
                   <!-- name -->
@@ -680,11 +691,40 @@
                     <hr />
                   </div> -->
                   </div>
+                  <div
+                    id="additional_buttons"
+                    class="additional_buttons md:px-10 px-5 md:py-3 py-2 md:mt-10 mt-5 md:flex md:gap-2 gap-1 md:justify-between justify-center"
+                  >
+                    <button
+                      id="print"
+                      class="print md:px-3 px-2 py-1 md:m-2 m-3 bg-blue-950 text-white hover:bg-blue-700"
+                    >
+                      Print
+                    </button>
+                    <button
+                      id="download"
+                      class="download md:px-3 px-2 py-1 md:m-2 m-3 bg-blue-950 text-white hover:bg-blue-700"
+                    >
+                      Download
+                    </button>
+                    <button
+                      id="Job_suggestion"
+                      class="Job_suggestion md:px-3 px-2 py-1 md:m-2 m-3 bg-blue-950 text-white hover:bg-blue-700"
+                    >
+                      Jobs Suggestion
+                    </button>
+                    <button
+                      id="project_suggestion"
+                      class="project_suggestion md:px-3 px-2 py-1 md:mt-2 mt-1 md:mb-2 mb-1 bg-blue-950 text-white hover:bg-blue-700"
+                    >
+                      Project Suggestion
+                    </button>
+                  </div>
                 </div>
 
                 <!-- 4 buttons starts here -->
 
-                <div
+                <!-- <div
                   id="additional_buttons"
                   class="additional_buttons px-10 py-3 mt-10 flex gap-2 justify-between"
                 >
@@ -712,7 +752,7 @@
                   >
                     Project Suggestion
                   </button>
-                </div>
+                </div> -->
 
                 <div id="note-scroll" class="w-full"></div>
 
@@ -721,7 +761,10 @@
             </div>
           </div>
         </div>
-        <div id="output" class="output mt-5 border border-gray-400 p-5"></div>
+        <div
+          id="output"
+          class="output mt-5 border h-auto w-auto mx-auto border-gray-400 p-5"
+        ></div>
         <!-- container end here -->
       </div>
       <!-- wrapper end here -->
